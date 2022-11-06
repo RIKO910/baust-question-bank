@@ -1,13 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import Header from './Pages/shared/Header/Header';
+import Home from './Pages/Home/Home/Home';
+import Department from './Pages/Home/Department/Department';
+import Cse from './Pages/Home/Department/Cse/Cse';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to baust question bank</h1>
+      <Header></Header>
       <Routes>
-        <Route></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/dept' element={<Department></Department>}></Route>
+        <Route path='/dept/cse' element={<Cse></Cse>}></Route>
       </Routes>
     </div>
   );
