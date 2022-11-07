@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Login = () => {
+    // const {signInWithGoogle} =useFirebase();
     return (
         <div>
             <div class="w-full max-w-xs m-auto mt-20">

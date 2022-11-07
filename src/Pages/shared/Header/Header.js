@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../Hooks/useFirebase';
 
 const Header = () => {
+    const {user} =useFirebase();
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -22,7 +24,14 @@ const Header = () => {
                     <ul className="menu menu-horizontal mr-5 p-0">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/login'>Admin</Link></li>
+                        {
+                            
+                                user.uid
+                                ?
+                                <li><Link to='/admin'>sign out</Link></li>
+                                :
+                              <li><Link to='/login'>Admin</Link></li>
+                        }
                     </ul>
                 </div>
 
