@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 
 const Header = () => {
-    const {user} =useFirebase();
+    const {user ,handleSignOut} =useFirebase();
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -15,7 +15,7 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/about'>About</Link></li>
-                            <li><Link to='/login'>Admin</Link></li>
+                            <li><Link to='/admin'>Admin</Link></li>
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">BAUST QUESTION BANK</Link>
@@ -24,13 +24,13 @@ const Header = () => {
                     <ul className="menu menu-horizontal mr-5 p-0">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/about'>About</Link></li>
-                        {
-                            
-                                user.uid
+                      <li>   <span>{user?.displayName && user.displayName}</span></li>
+                        { 
+                                user?.uid
                                 ?
-                                <li><Link to='/admin'>sign out</Link></li>
+                                <li><button onClick={handleSignOut}>sign out</button></li>
                                 :
-                              <li><Link to='/login'>Admin</Link></li>
+                              <li><Link to='/admin'>Admin</Link></li>
                         }
                     </ul>
                 </div>

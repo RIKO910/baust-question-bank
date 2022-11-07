@@ -13,12 +13,24 @@ const Showlevel1term1 = () => {
 
     return (
         <div>
-            <h2>Available user :{users.length}</h2>
+            <h2>Available question :{users.length}</h2>
+
+            <div className='grid grid-cols-3 gap-4'>
             {
                 users.map((a ,index) =>
-                <a href={a.weight}>{a.name}</a>
+                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                  <h2 className="font-bold text-2xl">{a.semester}</h2>
+                  <p className='text-lg font-bold'>{a.code}</p>
+                  <div className="card-actions justify-center">
+                   <a className=' hover:font-bold color-blue text-xl text-sky-600' href={a.link}>Link</a>
+                  </div>
+                </div>
+              </div>
                 )
             }
+            </div>
+           
         </div>
     );
 };

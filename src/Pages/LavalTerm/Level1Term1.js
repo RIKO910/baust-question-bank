@@ -2,14 +2,13 @@ import React from 'react';
 
 const Level1Term1 = () => {
 
-    const handelAddUser =event=>{
+    const handelAddUser = event => {
         event.preventDefault();
-        const name = event.target.name.value;
-        const age = event.target.age.value;
-        const weight = event.target.weight.value;
-        const file = event.target.file.value;
+        const semester = event.target.semester.value;
+        const code = event.target.code.value;
+        const link = event.target.link.value;
 
-        const users = { name, age, weight ,file};
+        const users = { semester, code, link };
 
         fetch('http://localhost:5000/level1term1', {
             method: 'POST',
@@ -29,27 +28,16 @@ const Level1Term1 = () => {
     return (
         <div>
             <form onSubmit={handelAddUser} class="">
-                        <div class="container text-center">
+                <div className="hero min-h-screen bg-base-200">
+                    <div className="card-body">
+                        <input type="text" name="semester" id="semester" placeholder="semester" className="input px-20 input-bordered" />
+                        <input type="text" name="code" id="code" placeholder="Course code" className="input px-20 input-bordered" />
+                        <input type="text" name="link" id="link" placeholder="google drive link" className="input px-20 input-bordered" />
+                        <input type="submit" name="submit" class="btn btn-outline-success btn-md px-20  btn-block" />
+                    </div>
+                </div>
 
-                            <div className='row'>
-                                <div class="form-group col-md-6">
-                                    <input type="name" name="name" id="name" placeholder="semester" class="form-control" />
-                                </div>
-
-                                <div class="form-group col-md-3">
-                                    <input type="text" name="age" id="age" placeholder="Course code" class="form-control" min="50"
-                                        max="" />
-                                </div>
-
-                                <div class="form-group col-md-3">
-                                    <input type="text" name="weight" id="weight" placeholder="link" class="form-control" />
-                                </div>
-                                
-                            </div>
-                        </div>
-
-                        <input type="submit" name="submit" class="btn btn-outline-success btn-lg btn-block" />
-                    </form>
+            </form>
         </div>
     );
 };
