@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 
 const Header = () => {
-    const {user ,handleSignOut} =useFirebase();
+    const { user, handleSignOut } = useFirebase();
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        
+            <div className="navbar bg-base-100 sticky top-0 z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -15,7 +15,14 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/about'>About</Link></li>
-                            <li><Link to='/admin'>Admin</Link></li>
+                            <li>   <span>{user?.displayName && <Link to='/admin'>Admin</Link>}</span></li>
+                        {
+                            user?.uid
+                                ?
+                                <li><button onClick={handleSignOut}>sign out</button></li>
+                                :
+                                <li><Link to='/admin'>Admin</Link></li>
+                        }
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">BAUST QUESTION BANK</Link>
@@ -24,19 +31,19 @@ const Header = () => {
                     <ul className="menu menu-horizontal mr-5 p-0">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/about'>About</Link></li>
-                      <li>   <span>{user?.displayName && user.displayName}</span></li>
-                        { 
-                                user?.uid
+                        <li>   <span>{user?.displayName && <Link to='/admin'>Admin</Link>}</span></li>
+                        {
+                            user?.uid
                                 ?
                                 <li><button onClick={handleSignOut}>sign out</button></li>
                                 :
-                              <li><Link to='/admin'>Admin</Link></li>
+                                <li><Link to='/admin'>Admin</Link></li>
                         }
                     </ul>
                 </div>
 
             </div>
-        </div>
+        
     );
 };
 

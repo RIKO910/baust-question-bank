@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
+import Footer from '../../shared/Footer/Footer';
 
 const AdminHome = () => {
     const { signInWithGoogle, user } = useFirebase()
@@ -23,6 +24,9 @@ const AdminHome = () => {
                     </div>
                 </div>
             </div>
+            <Footer>
+                
+            </Footer>
         </div>
     );
 };
