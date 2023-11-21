@@ -3,7 +3,7 @@ details and use firebase for entering admin site for my university student.
 
 - Here two part one part for admin and another part is all questions and notes details.
 
-- [Server side](https://github.com/RIKO910/question-server) deploy on heroku and user side deploy on netlify.
+-  [Server side](https://github.com/RIKO910/question-server) deploy on heroku and user side deploy on netlify.
 
 ## # It's a home page on our website.
 ![1](https://github.com/RIKO910/baust-question-bank/assets/98657508/0dcdf0e4-3e70-4b3c-adff-e2b2021878ff)
