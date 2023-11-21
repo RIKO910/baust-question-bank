@@ -5,7 +5,7 @@ details and use firebase for entering admin site for my university student.
 
 - Server side deploy on heroku and user side deploy on netlify.
 
-## - It's a home page on our website.
+## # It's a home page on our website.
 ![1](https://github.com/RIKO910/baust-question-bank/assets/98657508/0dcdf0e4-3e70-4b3c-adff-e2b2021878ff)
 ## - Our website can be used as a mobile view.
 ![2](https://github.com/RIKO910/baust-question-bank/assets/98657508/2e351980-692e-48a3-9a56-41b7fd478163)
